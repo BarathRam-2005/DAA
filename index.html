@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Largest Element - Divide and Conquer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Find the Largest Element using Divide and Conquer</h1>
+    
+    <label for="arrayInput">Enter array elements (comma separated):</label>
+    <input type="text" id="arrayInput" placeholder="e.g., 5,9,3,7,2,10,6">
+    <button onclick="findLargest()">Find Largest</button>
+
+    <h3 id="result"></h3>
+
+    <h2>Approach</h2>
+    <p>1. Divide array into halves<br>2. Recursively find largest in each half<br>3. Compare and return the maximum</p>
+
+    <h2>Pseudocode</h2>
+    <pre>
+Function FindMaxIndex(arr, low, high):
+    if low == high:
+        return low
+    mid = (low + high) // 2
+    left = FindMaxIndex(arr, low, mid)
+    right = FindMaxIndex(arr, mid+1, high)
+    return max(left, right)
+    </pre>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
